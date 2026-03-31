@@ -8,8 +8,8 @@ df = pd.read_csv("D:\\Data Science\\Project\\ds_job_market\\data\\cleaned_data.c
 print(df.columns)
 data = df.copy()
 data = data.drop(columns=["min_salary", "max_salary", "avg_salary"])
-print(data.dtypes)
-print(data.info())
+print(f"Columns data type:\n{data.dtypes}\n")
+print(f"Dataset info:\n{data.info()}")
 
 # %% Fixing previous step so it produces more accurate results
 def get_min_salary(text):
@@ -55,7 +55,19 @@ data_formatted["posted_at"] = pd.to_datetime(data_formatted["posted_at"])
 data_formatted["posted_date_only"] = pd.to_datetime(data_formatted["posted_date_only"])
 
 # %% Data validation
-# Province Not Available because unvalid location
-# Province Not Available because province in location not included at the preliminary list (58)
-# Remove hours in datetime to date only on posted_date_only
-# Checks if int representing the boolean value at _yn columns is correct
+# Province Not Available because unvalid location and location not included at the preliminary list (58)
+data_validated = data_formatted.copy()
+
+for row in data_validated.itertuples():
+    if row.province == "Not Available" and "yogyakarta" in str(row.location).lower():
+        data_validated.at[row.Index, "province"] = "yogyakarta"
+    elif row.province == "Not Available" and str(row.location).lower() == "indonesia":
+        data_validated.at[row.Index, "province"] = "Not Available"
+## extract rows with 'Not Available' province column
+data_validated["location"] = data_validated.apply(lambda row: "Not Available" if row["province"] == "Not Available" and row["location"] != "Indonesia" else row["location"], axis=1)
+
+# Remove posted_date_only column
+data_validated = data_validated.drop(columns=["posted_date_only"])
+
+#%% Saving the validated data
+data_validated.to_csv("D:\\Data Science\\Project\\ds_job_market\\data\\validated_data.csv", sep="|", index=False, encoding="utf-8-sig")
