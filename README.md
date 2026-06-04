@@ -81,7 +81,7 @@ An interactive dashboard showing:
 
 ## 🛠️ Skills Tracked
 
-`SQL` · `Python` · `Power BI` · `Tableau` · `Git` · `AWS` · `MySQL` · `PostgreSQL` · `Spark` · `Kafka` · `Hadoop` · `Snowflake` · `Databricks` · `Apache` · `Azure` · `Looker` · `GitHub`
+`SQL` · `Python`· `Tableau` · `PostgreSQL` · `GitHub`
 
 ---
 
