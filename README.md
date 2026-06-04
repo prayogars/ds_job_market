@@ -81,7 +81,7 @@ An interactive dashboard showing:
 
 ## 🛠️ Skills Tracked
 
-`SQL` · `Python`· `Tableau` · `PostgreSQL` · `GitHub`
+`SQL` · `Python`· `Tableau` · `PostgreSQL` · `GitHub` · `BeautifulSoup` · `Selenium`
 
 ---
 
