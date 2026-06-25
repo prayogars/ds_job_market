@@ -110,7 +110,7 @@ Output: `cleaned_data.csv` — ready for analysis or Tableau import.
 
 ## 📊 Dashboard Preview
 
-![Data Job Market in Indonesia Dashboard]([Dashboard_1.png](https://public.tableau.com/views/ds_job_market_dashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))
+![Data Job Market in Indonesia Dashboard](https://public.tableau.com/views/ds_job_market_dashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ---
 
